@@ -1,122 +1,265 @@
 using System;
-using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Forms;
 
-namespace YourNamespace
+public partial class Form1 : Form
 {
-    public partial class MainWindow : Window
+    int f, d, s, v, r;
+    int b = 0;
+    int m = 0;
+    string sent, sent_prib, sent_prib2, sent_prib3, emm, valen, rou, ann, ann_prib, ann_prib2;
+
+    public Form1()
     {
-        private int b;
-        private int m;
+        InitializeComponent();
+    }
 
-        public MainWindow()
+    private void CommandButton1_Click(object sender, EventArgs e)
+    {
+        Label1.Caption = "Время " + DateTime.Now.TimeOfDay.ToString();
+
+        CommandButton2.Enabled = true;
+        CommandButton5.Enabled = true;
+
+        f = DateTime.Now.Hour;
+        d = DateTime.Now.Minute;
+        s = 0;
+        v = ComboBox1.Value;
+
+        if (v == 2)
+            r = 0;
+        else if (v == 5)
+            r = 3;
+        else if (v == 10)
+            r = 8;
+
+        // Маршрут 1
+        if (OptionButton1.Checked)
         {
-            InitializeComponent();
-            // Инициализация других элементов управления и настройка событий
+            b += 1;
+            m += 1;
+            Label8.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label8.Caption;
+            Label2.Caption = new DateTime(f, d + 7 + r, s).ToString();
+            emm = Label2.Caption;
+            Label3.Caption = new DateTime(f, d + 12 + r, s).ToString();
+            valen = Label3.Caption;
+            Label5.Caption = new DateTime(f, d + 16 + r, s).ToString();
+            rou = Label5.Caption;
+            Label6.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            sent_prib = Label6.Caption;
+
+            OptionButton2.Enabled = false;
+            OptionButton3.Enabled = false;
+            OptionButton4.Enabled = false;
+            OptionButton5.Enabled = false;
+            OptionButton6.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+        // Маршрут 2
+        else if (OptionButton2.Checked)
+        {
+            b += 1;
+            m += 1;
+            Label18.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label18.Caption;
+            Label14.Caption = new DateTime(f, d + 5 + r, s).ToString();
+            rou = Label14.Caption;
+            Label15.Caption = new DateTime(f, d + 10 + r, s).ToString();
+            valen = Label15.Caption;
+            Label16.Caption = new DateTime(f, d + 14 + r, s).ToString();
+            emm = Label16.Caption;
+            Label13.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            sent_prib2 = Label13.Caption;
+
+            OptionButton1.Enabled = false;
+            OptionButton3.Enabled = false;
+            OptionButton4.Enabled = false;
+            OptionButton5.Enabled = false;
+            OptionButton6.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+        // Маршрут 3
+        else if (OptionButton3.Checked)
+        {
+            b += 1.2;
+            m += 1;
+            Label28.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label28.Caption;
+            Label24.Caption = new DateTime(f, d + 7 + r, s).ToString();
+            rou = Label24.Caption;
+            Label25.Caption = new DateTime(f, d + 12 + r, s).ToString();
+            ann = Label25.Caption;
+            Label22.Caption = new DateTime(f, d + 16 + r, s).ToString();
+            sent_prib3 = Label22.Caption;
+            Label23.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            ann_prib = Label23.Caption;
+
+            OptionButton1.Enabled = false;
+            OptionButton2.Enabled = false;
+            OptionButton4.Enabled = false;
+            OptionButton5.Enabled = false;
+            OptionButton6.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+        // Маршрут 4
+        else if (OptionButton4.Checked)
+        {
+            b += 1;
+            m += 1;
+            Label42.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label42.Caption;
+            Label38.Caption = new DateTime(f, d + 5 + r, s).ToString();
+            valen = Label38.Caption;
+            Label39.Caption = new DateTime(f, d + 10 + r, s).ToString();
+            emm = Label39.Caption;
+            Label40.Caption = new DateTime(f, d + 14 + r, s).ToString();
+            rou = Label40.Caption;
+            Label37.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            sent_prib2 = Label37.Caption;
+
+            OptionButton1.Enabled = false;
+            OptionButton2.Enabled = false;
+            OptionButton3.Enabled = false;
+            OptionButton5.Enabled = false;
+            OptionButton6.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+        // Маршрут 5
+        else if (OptionButton5.Checked)
+        {
+            b += 1;
+            m += 1;
+            Label58.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label58.Caption;
+            Label54.Caption = new DateTime(f, d + 7 + r, s).ToString();
+            rou = Label54.Caption;
+            Label55.Caption = new DateTime(f, d + 12 + r, s).ToString();
+            ann = Label55.Caption;
+            Label52.Caption = new DateTime(f, d + 16 + r, s).ToString();
+            sent_prib3 = Label52.Caption;
+            Label53.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            ann_prib = Label53.Caption;
+
+            OptionButton1.Enabled = false;
+            OptionButton2.Enabled = false;
+            OptionButton3.Enabled = false;
+            OptionButton4.Enabled = false;
+            OptionButton6.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+        // Маршрут 6
+        else if (OptionButton6.Checked)
+        {
+            b += 1;
+            m += 1;
+            Label71.Caption = new DateTime(f, d + 2 + r, s).ToString();
+            sent = Label71.Caption;
+            Label67.Caption = new DateTime(f, d + 7 + r, s).ToString();
+            valen = Label67.Caption;
+            Label68.Caption = new DateTime(f, d + 12 + r, s).ToString();
+            ann = Label68.Caption;
+            Label65.Caption = new DateTime(f, d + 16 + r, s).ToString();
+            sent_prib3 = Label65.Caption;
+            Label66.Caption = new DateTime(f, d + 18 + r, s).ToString();
+            ann_prib2 = Label66.Caption;
+
+            OptionButton1.Enabled = false;
+            OptionButton2.Enabled = false;
+            OptionButton3.Enabled = false;
+            OptionButton4.Enabled = false;
+            OptionButton5.Enabled = false;
+            CommandButton4.Enabled = false;
+            CommandButton1.Enabled = false;
+        }
+    }
+
+    private void CommandButton2_Click(object sender, EventArgs e)
+    {
+        Label7.Caption = b.ToString();
+        Label4.Caption = m.ToString();
+
+        if (OptionButton1.Checked)
+        {
+            Label10.Caption = sent;
+            Label11.Caption = emm;
+            Label12.Caption = valen;
+            Label9.Caption = rou;
+            Label17.Caption = sent_prib;
+        }
+        else if (OptionButton2.Checked)
+        {
+            Label20.Caption = sent;
+            Label21.Caption = rou;
+            Label19.Caption = valen;
+            Label27.Caption = emm;
+            Label26.Caption = sent_prib2;
+        }
+        else if (OptionButton3.Checked)
+        {
+            Label30.Caption = sent;
+            Label31.Caption = rou;
+            Label29.Caption = ann;
+            Label36.Caption = sent_prib3;
+            Label35.Caption = ann_prib;
+        }
+        else if (OptionButton4.Checked)
+        {
+            Label44.Caption = sent;
+            Label45.Caption = valen;
+            Label43.Caption = emm;
+            Label51.Caption = rou;
+            Label50.Caption = sent_prib2;
+        }
+        else if (OptionButton5.Checked)
+        {
+            Label60.Caption = sent;
+            Label61.Caption = rou;
+            Label59.Caption = ann;
+            Label64.Caption = sent_prib3;
+            Label63.Caption = ann_prib;
+        }
+        else if (OptionButton6.Checked)
+        {
+            Label73.Caption = sent;
+            Label74.Caption = valen;
+            Label72.Caption = ann;
+            Label78.Caption = sent_prib3;
+            Label77.Caption = ann_prib2;
         }
 
-        private void CommandButton1_Click(object sender, RoutedEventArgs e)
-        {
-            Label1.Content = "Время " + DateTime.Now.ToLongTimeString();
+        CommandButton3.Enabled = true;
+        CommandButton2.Enabled = false;
+    }
 
-            CommandButton2.IsEnabled = true;
-            CommandButton5.IsEnabled = true;
+    private void CommandButton3_Click(object sender, EventArgs e)
+    {
+        Label33.Caption = DateTime.Now.TimeOfDay.ToString();
+        CommandButton3.Enabled = false;
+        CommandButton4.Enabled = true;
+    }
 
-            int f = DateTime.Now.Hour;
-            int d = DateTime.Now.Minute;
-            int s = 0;
-            int v = ComboBox1.SelectedIndex;
+    private void CommandButton4_Click(object sender, EventArgs e)
+    {
+        Label32.Caption = DateTime.Now.TimeOfDay.ToString();
+        CommandButton4.Enabled = false;
+        OptionButton1.Enabled = true;
+        OptionButton2.Enabled = true;
+        OptionButton3.Enabled = true;
+        OptionButton4.Enabled = true;
+        OptionButton5.Enabled = true;
+        OptionButton6.Enabled = true;
+        CommandButton1.Enabled = true;
+        b = 0;
+        m = 0;
+    }
 
-            int r;
-            switch (v)
-            {
-                case 0:
-                    r = 0;
-                    break;
-                case 1:
-                    r = 3;
-                    break;
-                case 2:
-                    r = 8;
-                    break;
-                default:
-                    r = 0;
-                    break;
-            }
-
-            // Маршрут 1
-            if (OptionButton1.IsChecked == true)
-            {
-                b += 1;
-                m += 1;
-                Label8.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 2 + r, s).ToLongTimeString();
-                sent = Label8.Content.ToString();
-                Label2.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 7 + r, s).ToLongTimeString();
-                emm = Label2.Content.ToString();
-                Label3.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 12 + r, s).ToLongTimeString();
-                valen = Label3.Content.ToString();
-                Label5.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 16 + r, s).ToLongTimeString();
-                rou = Label5.Content.ToString();
-                Label6.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 18 + r, s).ToLongTimeString();
-                sent_prib = Label6.Content.ToString();
-
-                OptionButton2.IsEnabled = false;
-                OptionButton3.IsEnabled = false;
-                OptionButton4.IsEnabled = false;
-                OptionButton5.IsEnabled = false;
-                OptionButton6.IsEnabled = false;
-                CommandButton4.IsEnabled = false;
-                CommandButton1.IsEnabled = false;
-
-                // Ваш код для маршрута 1
-            }
-            // Маршрут 2
-            else if (OptionButton2.IsChecked == true)
-            {
-                b += 1;
-                m += 1;
-                Label18.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 2 + r, s).ToLongTimeString();
-                sent = Label18.Content.ToString();
-                Label14.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 5 + r, s).ToLongTimeString();
-                rou = Label14.Content.ToString();
-                Label15.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 8 + r, s).ToLongTimeString();
-                sent_prib = Label15.Content.ToString();
-                Label17.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 12 + r, s).ToLongTimeString();
-                emm = Label17.Content.ToString();
-                Label13.Content = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, f, d + 14 + r, s).ToLongTimeString();
-                valen = Label13.Content.ToString();
-                
-                OptionButton1.IsEnabled = false;
-                OptionButton3.IsEnabled = false;
-                OptionButton4.IsEnabled = false;
-                OptionButton5.IsEnabled = false;
-                OptionButton6.IsEnabled = false;
-                CommandButton4.IsEnabled = false;
-                CommandButton1.IsEnabled = false;
-
-                // Ваш код для маршрута 2
-            }
-            // Другие маршруты
-            else
-            {
-                // Ваш код для других маршрутов
-            }
-        }
-
-        private void CommandButton2_Click(object sender, RoutedEventArgs e)
-        {
-            OptionButton1.IsEnabled = true;
-            OptionButton2.IsEnabled = true;
-            OptionButton3.IsEnabled = true;
-            OptionButton4.IsEnabled = true;
-            OptionButton5.IsEnabled = true;
-            OptionButton6.IsEnabled = true;
-            CommandButton4.IsEnabled = true;
-            CommandButton1.IsEnabled = true;
-            CommandButton2.IsEnabled = false;
-            CommandButton5.IsEnabled = false;
-
-            // Ваш код для обработки события CommandButton2_Click
-        }
+    private void CommandButton5_Click(object sender, EventArgs e)
+    {
+        this.Close();
     }
 }
